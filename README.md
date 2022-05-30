@@ -29,3 +29,10 @@ cac o import thi (inner.main_array) la co
 
 mn co gang lam trong khoang 1 tuan (submit truoc 8.6)  de con bo sung
 chu t con chua doc guidelines :)
+
+
+theo t thay thi minh con may cai diagram nua,
+report thi phai lam cuoi r,
+lam xong class lai chia diagram tiep cung duoc
+
+
