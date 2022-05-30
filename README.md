@@ -22,5 +22,10 @@ ae code trong cac file kia hay khac cung duoc
 mien~ ten file giong the
 
 
+cai array minh dung la (main_array)
+cac o import thi (inner.main_array) la co
+(inner) la cai class cua main menu
+
+
 mn co gang lam trong khoang 1 tuan (submit truoc 8.6)  de con bo sung
 chu t con chua doc guidelines :)
