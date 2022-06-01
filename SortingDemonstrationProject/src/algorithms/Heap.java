@@ -48,7 +48,7 @@ public class Heap extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		if(e.getSource()==back) {
 			this.dispose();
-			inner in = new inner();
+			Inner in = new Inner();
 			
 		}
 	

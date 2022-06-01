@@ -53,7 +53,7 @@ public class Information extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		if(e.getSource()==back) {
 			frame.dispose();
-			inner in = new inner();
+			Inner in = new Inner();
 			
 		}
 		

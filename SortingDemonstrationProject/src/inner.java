@@ -13,7 +13,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 
-public class inner extends JFrame implements ActionListener{
+public class Inner extends JFrame implements ActionListener{
 
 	JMenuBar menuBar;	
 	JMenu mainMenu;
@@ -52,7 +52,7 @@ public class inner extends JFrame implements ActionListener{
 	ArrayList<Integer> main_array; //array in use
 	
 	
-	inner(){		
+	Inner(){		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("Group 15");
 		this.setSize(600,500);
