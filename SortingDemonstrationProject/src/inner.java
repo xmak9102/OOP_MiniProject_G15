@@ -263,15 +263,15 @@ public class inner extends JFrame implements ActionListener{
 			
 			if(algorithm.equals(bubble_sort)) {
 				this.dispose();
-				bubble_alg b1 = new bubble_alg();
+				Bubble b1 = new Bubble();
 			}
 			else if(algorithm == heap_sort) {
 				this.dispose();
-				heap_alg b2 = new heap_alg();
+				Heap b2 = new Heap();
 			}
 			else if(algorithm == shell_sort) {
 				this.dispose();
-				shell_alg b3 = new shell_alg();
+				Shell b3 = new Shell();
 			}
 			
 			else {

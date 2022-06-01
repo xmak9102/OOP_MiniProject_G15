@@ -9,12 +9,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class shell_alg extends JFrame implements ActionListener{
+public class Shell extends JFrame implements ActionListener{
 
 	JLabel label;
 	JButton back;
 	
-	shell_alg(){
+	Shell(){
 		
 		
 		label = new JLabel("Shell sort algorithm");

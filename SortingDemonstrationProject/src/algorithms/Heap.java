@@ -9,12 +9,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class heap_alg extends JFrame implements ActionListener{
+public class Heap extends JFrame implements ActionListener{
 
 	JLabel label;
 	JButton back;
 	
-	heap_alg(){
+	Heap(){
 		
 		
 		label = new JLabel("Heap sort algorithm");

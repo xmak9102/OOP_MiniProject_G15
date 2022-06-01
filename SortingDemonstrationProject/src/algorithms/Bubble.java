@@ -9,12 +9,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class bubble_alg extends JFrame implements ActionListener{
+public class Bubble extends JFrame implements ActionListener{
 
 	JLabel label;
 	JButton back;
 	
-	bubble_alg(){
+	Bubble(){
 		
 		label = new JLabel("Bubble sort algorithm");
 		label.setBounds(50,0, 500,40);
