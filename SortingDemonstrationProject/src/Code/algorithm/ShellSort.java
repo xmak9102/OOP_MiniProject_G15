@@ -2,8 +2,8 @@ package algorithm;
 
 public class ShellSort extends Algorithm{
 	
-	public ShellSort(int[] data) {
-		super(data);
+	public ShellSort(int[] data, int passInNumberOfInstance) {
+		super(data, passInNumberOfInstance);
 	}
 
 	//the idea of this sorting algorithm is to use insertion sort on a partially sorted array.

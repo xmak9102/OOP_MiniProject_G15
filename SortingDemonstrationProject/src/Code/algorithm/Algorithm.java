@@ -3,6 +3,7 @@ package algorithm;
 public abstract class Algorithm implements Sortable{
 	int[] arr;
 	int numberOfIteration;
+	int numberOfInstance;
 	
 	
 	public int[] getArr() {
@@ -18,7 +19,8 @@ public abstract class Algorithm implements Sortable{
 		System.out.println();
 	}
 	
-	public Algorithm(int[] data) {
+	public Algorithm(int[] data, int passInNumberOfInstance) {
 		arr = data;
+		numberOfInstance = passInNumberOfInstance;
 	}
 }

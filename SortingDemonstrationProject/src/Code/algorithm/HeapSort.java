@@ -2,8 +2,8 @@ package algorithm;
 
 public class HeapSort extends Algorithm {
 	
-	public HeapSort(int[] data) {
-		super(data);
+	public HeapSort(int[] data, int passInNumberOfInstance) {
+		super(data, passInNumberOfInstance);
 	}
 
 	public void sort() {

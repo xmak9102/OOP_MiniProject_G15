@@ -10,6 +10,10 @@ public class DataController {
 		return data;
 	}
 
+	public int getNUMBER_OF_INSTANCE() {
+		return NUMBER_OF_INSTANCE;
+	}
+
 	public void generateData() {
 		for (int i = 1; i < NUMBER_OF_INSTANCE + 1; i++) {
 			data[i-1] = i;

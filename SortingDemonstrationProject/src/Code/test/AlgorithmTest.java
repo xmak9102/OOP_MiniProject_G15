@@ -12,12 +12,15 @@ public class AlgorithmTest {
 		BubbleSort bubbleSort;
 		ShellSort shellSort;
 		int[] arr;
+		int numberOfInstance;
 		
 		//---scene---
 		
 		dataController.generateData();
 		dataController.shuffleData();
 		arr = dataController.getData();
+		numberOfInstance = dataController.getNUMBER_OF_INSTANCE();
+		
 //		heapSort = new HeapSort(arr);
 //		heapSort.sort();
 //		heapSort.print();
@@ -25,7 +28,7 @@ public class AlgorithmTest {
 		
 		//---------------------------
 		//Bubble
-		bubbleSort = new BubbleSort(arr);
+		bubbleSort = new BubbleSort(arr, numberOfInstance);
 		bubbleSort.print();
 		bubbleSort.sort();
 		bubbleSort.print();
@@ -37,7 +40,7 @@ public class AlgorithmTest {
 		
 		//---------------------------
 		//Shell
-		shellSort = new ShellSort(arr);
+		shellSort = new ShellSort(arr, numberOfInstance);
 		shellSort.print();
 		shellSort.sort();
 		shellSort.print();
@@ -49,7 +52,7 @@ public class AlgorithmTest {
 		
 		//---------------------------
 		//Heap
-		heapSort = new HeapSort(arr);
+		heapSort = new HeapSort(arr, numberOfInstance);
 		heapSort.print();
 		heapSort.sort();
 		heapSort.print();

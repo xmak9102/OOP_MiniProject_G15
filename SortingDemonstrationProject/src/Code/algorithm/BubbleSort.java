@@ -17,7 +17,7 @@ public class BubbleSort extends Algorithm {
 		}
 	}
 	
-	public BubbleSort(int[] data) {
-		super(data);
+	public BubbleSort(int[] data, int passInNumberOfInstance) {
+		super(data, passInNumberOfInstance);
 	}
 }
