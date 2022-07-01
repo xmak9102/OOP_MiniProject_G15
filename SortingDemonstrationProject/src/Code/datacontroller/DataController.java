@@ -3,8 +3,8 @@ package datacontroller;
 import java.util.Random;
 
 public class DataController {
-	private final int NUMBER_OF_INSTANCE = 100;
-	private int[] data = new int[NUMBER_OF_INSTANCE];
+	private int NUMBER_OF_INSTANCE;
+	private int[] data;
 	
 	public int[] getData() {
 		return data;
@@ -14,6 +14,11 @@ public class DataController {
 		return NUMBER_OF_INSTANCE;
 	}
 
+	public void setNUMBER_OF_INSTANCE(int nUMBER_OF_INSTANCE) {
+		NUMBER_OF_INSTANCE = nUMBER_OF_INSTANCE;
+		data = new int[NUMBER_OF_INSTANCE];
+	}
+	
 	public void generateData() {
 		for (int i = 1; i < NUMBER_OF_INSTANCE + 1; i++) {
 			data[i-1] = i;
@@ -31,11 +36,17 @@ public class DataController {
 		}
 	}
 	
-	public void print() {
-		System.out.println("Newly created data: ");
-		for (int i : data) {
-			System.out.print(i + " ");
+	//return the current array, either newly create or shuffle
+	public String toString() {
+		StringBuilder res = new StringBuilder();
+		res.append("[");
+		for (int i = 0; i < data.length; i++) {
+			if (i != 0) {
+				res.append(" ");
+			}
+			res.append(data[i]);
 		}
-		System.out.println();
+		res.append("]");
+		return res.toString();
 	}
 }

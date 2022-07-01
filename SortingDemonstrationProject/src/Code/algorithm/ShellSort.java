@@ -1,17 +1,12 @@
 package algorithm;
 
-public class ShellSort extends Algorithm{
-	
-	public ShellSort(int[] data, int passInNumberOfInstance) {
-		super(data, passInNumberOfInstance);
-	}
 
-	//the idea of this sorting algorithm is to use insertion sort on a partially sorted array.
-	public void sort() {
+public class ShellSort extends Algorithm{
+	public String sort() {
 		int n = arr.length;
 		this.numberOfIteration = 0;
 		
-		//inner and outer refers to 2 integers in each iteration 
+		//inner and outer refers to 2 integers in each iteration; inner < outer
 		int inner, outer, temp;
 		int interval = 1;
 		
@@ -21,8 +16,11 @@ public class ShellSort extends Algorithm{
 		}
 		while (interval > 0) {
 			for (outer = interval; outer < n; outer++) {
+				
+				
 				temp = arr[outer];
 				inner = outer;
+		
 				while(inner > interval - 1 && arr[inner - interval] >= temp) {
 					arr[inner] = arr[inner - interval];
 					inner = inner - interval;
@@ -31,5 +29,11 @@ public class ShellSort extends Algorithm{
 			}
 			interval = (interval - 1) / 3;
 		}
+		return "";
 	}
+	
+	public ShellSort(int[] data, int passInNumberOfInstance) {
+		super(data, passInNumberOfInstance);
+	}
+	
 }

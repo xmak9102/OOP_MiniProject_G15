@@ -1,25 +1,23 @@
 package algorithm;
 
-public class HeapSort extends Algorithm {
+public class HeapSort extends Algorithm{
 	
-	public HeapSort(int[] data, int passInNumberOfInstance) {
-		super(data, passInNumberOfInstance);
-	}
-
-	public void sort() {
+	public String sort() {
 		int n = arr.length;
 		
 		for (int i = n / 2 - 1; i >= 0; i--) {
-			heapify(arr, n , 1);
+			heapify(arr, n , i);
 		}
 		
 		for (int i = n - 1; i > 0; i--) {
 			int temp = arr[0];
 			arr[0] = arr[i];
 			arr[i] = temp;
-			
+
 			heapify(arr, i, 0);
 		}
+		
+		return "Successfully Sorted!";
 	}
 	
 	public void heapify(int[] arr, int n, int i) {
@@ -35,12 +33,20 @@ public class HeapSort extends Algorithm {
 			parentNode = right;
 		}
 		
+		
+		
 		if(parentNode != i) {
 			int swap = arr[i];
 			arr[i] = arr[parentNode];
 			arr[parentNode] = swap;
 			
+			
+			
 			heapify(arr, n , parentNode);
 		}
+	}
+	
+	public HeapSort(int[] data, int passInNumberOfInstance) {
+		super(data, passInNumberOfInstance);
 	}
 }
