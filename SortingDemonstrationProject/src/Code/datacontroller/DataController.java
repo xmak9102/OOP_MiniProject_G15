@@ -10,6 +10,10 @@ public class DataController {
 		return data;
 	}
 
+	public void setData(int[] data) {
+		this.data = data;
+	}
+
 	public int getNUMBER_OF_INSTANCE() {
 		return NUMBER_OF_INSTANCE;
 	}

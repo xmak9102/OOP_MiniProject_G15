@@ -51,22 +51,23 @@ public class SortingScreen extends GeneralScreen {
 	public void createCenter() {
 		instanceInputTextField = new JTextField();
 		instanceInputTextField.setText("10");
-		instanceInputTextField.setBounds(614, 23, 20, 20);
+		instanceInputTextField.setBounds(900, 123, 27, 20);
 		contentPane.add(instanceInputTextField);
 		instanceInputTextField.setColumns(10);
+		instanceInputTextField.setHorizontalAlignment(JTextField.CENTER);
 		
 		JLabel instanceInputTextFieldLabel = new JLabel("Number of instances");
-		instanceInputTextFieldLabel.setBounds(495, 26, 121, 14);
+		instanceInputTextFieldLabel.setBounds(775, 126, 121, 14);
 		contentPane.add(instanceInputTextFieldLabel);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 46, 471, 330);
+		scrollPane.setBounds(10, 46, 701, 486);
 		contentPane.add(scrollPane);
 		
 		
 		//ColorPane helps us to change the colors of the text easily
 		sortingColorPane = new ColorPane();
-		sortingColorPane.setFont(new Font("Sylfaen", Font.PLAIN, 15));
+		sortingColorPane.setFont(new Font("Sylfaen", Font.PLAIN, 23));
 		sortingColorPane.setBackground(Color.WHITE);
 		sortingColorPane.setText("Creating a new array to start sorting!");
 		sortingColorPane.setEditable(false);
@@ -74,32 +75,33 @@ public class SortingScreen extends GeneralScreen {
 		
 		JButton autoCreateArrayBtn = new JButton("Auto create array");
 		autoCreateArrayBtn.addActionListener(new createArrayListener());
-		autoCreateArrayBtn.setBounds(497, 46, 137, 23);
+		autoCreateArrayBtn.setBounds(777, 146, 137, 23);
 		contentPane.add(autoCreateArrayBtn);
 		
 		JButton selfCreateArrayBtn = new JButton("Self create array");
-		selfCreateArrayBtn.setBounds(497, 80, 137, 23);
+		selfCreateArrayBtn.addActionListener(new createArrayListener());
+		selfCreateArrayBtn.setBounds(777, 180, 137, 23);
 		contentPane.add(selfCreateArrayBtn);
 		
 		JLabel algorithmToChooseLabel = new JLabel("Algorithm\r\n to choose: ");
 		algorithmToChooseLabel.setVerticalAlignment(SwingConstants.TOP);
 		algorithmToChooseLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		algorithmToChooseLabel.setBounds(495, 122, 153, 18);
+		algorithmToChooseLabel.setBounds(775, 222, 153, 18);
 		contentPane.add(algorithmToChooseLabel);
 		
 		JButton bubbleSortBtn = new JButton("Bubble Sort");
 		bubbleSortBtn.addActionListener(new choiceOfAlgorithmListener());
-		bubbleSortBtn.setBounds(497, 151, 137, 23);
+		bubbleSortBtn.setBounds(777, 251, 137, 23);
 		contentPane.add(bubbleSortBtn);
 		
 		JButton shellSortBtn = new JButton("Shell Sort");
 		shellSortBtn.addActionListener(new choiceOfAlgorithmListener());
-		shellSortBtn.setBounds(497, 185, 137, 23);
+		shellSortBtn.setBounds(777, 285, 137, 23);
 		contentPane.add(shellSortBtn);
 		
 		JButton heapSortBtn = new JButton("Heap Sort");
 		heapSortBtn.addActionListener(new choiceOfAlgorithmListener());
-		heapSortBtn.setBounds(497, 219, 137, 23);
+		heapSortBtn.setBounds(777, 319, 137, 23);
 		contentPane.add(heapSortBtn);
 	}
 	
@@ -168,10 +170,39 @@ public class SortingScreen extends GeneralScreen {
 				dataController.generateData();
 				dataController.shuffleData();
 				String str_arr = dataController.toString();
-				sortingColorPane.setText("Newly created array : " + str_arr);
+				sortingColorPane.setText("Newly created array: " + str_arr);
 			}
 			else {
-				//need to be updated
+				String inputData = JOptionPane.showInputDialog("Enter the array, each item seperated by a space");
+				try {
+					inputData = inputData.strip();
+					String[] inputStrArray = inputData.split(" ");
+			        int[] inputIntArray = new int[inputStrArray.length];
+			        for (int i = 0; i < inputStrArray.length; i++) {
+			        	try {
+			        		System.out.print("oke");
+			        		inputIntArray[i] = Integer.parseInt(inputStrArray[i]);
+			        	}
+			        	catch (NumberFormatException error){
+			        		System.out.println(error);
+			        		JOptionPane.showMessageDialog(null, "Your array is not created due to the NumberFormatException");
+			        		inputIntArray = null;
+			        	}
+			        }
+			        if (inputIntArray.length != 0) {
+			        	dataController.setNUMBER_OF_INSTANCE(inputIntArray.length);
+				        dataController.setData(inputIntArray);
+				        String str_arr = dataController.toString();
+				        sortingColorPane.setText("Newly created array: " + str_arr + "\nArray length: " + inputIntArray.length);
+				        
+			        }
+			        else {
+			        	dataController.setData(null);
+			        }
+				}
+				catch (NullPointerException error) {
+					System.out.println("Cancel button pressed");
+				}
 			}
 		}
 	}

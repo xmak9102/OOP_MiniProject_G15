@@ -25,7 +25,7 @@ public abstract class GeneralScreen extends JFrame{
 		setBackground(Color.DARK_GRAY);
 		setTitle("Sorting Application");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 670, 444);
+		setBounds(100, 100, 1000, 600);
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -52,8 +52,8 @@ public abstract class GeneralScreen extends JFrame{
 		
 		JLabel lblNewLabel = new JLabel("Sorting Demonstration");
 		lblNewLabel.setForeground(new Color(244, 164, 96));
-		lblNewLabel.setFont(new Font("Quicksand", Font.PLAIN, 28));
-		lblNewLabel.setBounds(0, 0, 372, 35);
+		lblNewLabel.setFont(new Font("Quicksand", Font.PLAIN, 33));
+		lblNewLabel.setBounds(13, 4, 372, 35);
 		contentPane.add(lblNewLabel);
 	}
 	
