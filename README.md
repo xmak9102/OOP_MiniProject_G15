@@ -1,5 +1,7 @@
 # OOP_MiniProject_G15
 
+## TODO
+> change the use case diagram to not include any of the include or extend relation
 
 t nghi algorithm nao cung nhu nhau
 
