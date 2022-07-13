@@ -1,7 +1,5 @@
 package algorithm;
 
-import java.util.Arrays;
-
 import historylog.HistoryLog;
 
 public class ShellSort extends Algorithm{
@@ -20,15 +18,6 @@ public class ShellSort extends Algorithm{
 			interval = interval * 3 + 1;
 		}
 		while (interval > 0) {
-			//deep copy array at current state
-//			int[] currentArr = new int[arr.length];
-//			for(int k = 0; k < arr.length; k++){
-//				currentArr[k] = arr[k];
-//			}
-			
-			//history log here
-			//historyLogs.add(new HistoryLog(currentArr, new int[] {arr[interval], arr[interval-interval]}));
-			
 			for (outer = interval; outer < n; outer++) {
 				temp = arr[outer];
 				inner = outer;
@@ -44,7 +33,7 @@ public class ShellSort extends Algorithm{
 					}
 					
 					historyLogs.add(new HistoryLog(currentArr, new int[] {arr[inner - interval], arr[outer]}, new int[] {inner - interval, outer}, numberOfIteration++, correctIndexFrom));
-					System.out.println("For: " + Arrays.toString(currentArr));
+//					System.out.println("For: " + Arrays.toString(currentArr));
 				}
 		
 				while(inner > interval - 1 && arr[inner - interval] >= temp) {
@@ -57,14 +46,12 @@ public class ShellSort extends Algorithm{
 					}
 				
 					
-//					historyLogs.add(new HistoryLog(currentArr1, new int[] {arr[inner - interval], temp}, new int[] {inner - interval, outer}, numberOfIteration, correctIndexFrom));
 					
 					arr[inner] = arr[inner - interval];
 					historyLogs.add(new HistoryLog(currentArr1, new int[] {arr[inner - interval], temp}, new int[] {inner - interval, outer}, numberOfIteration++, correctIndexFrom));
-					System.out.println("While: " + Arrays.toString(currentArr1));
+//					System.out.println("While: " + Arrays.toString(currentArr1));
 						
 					
-//					System.out.println("While: " + Arrays.toString(currentArr1));
 					inner = inner - interval;
 				}
 				if (interval == 1) {

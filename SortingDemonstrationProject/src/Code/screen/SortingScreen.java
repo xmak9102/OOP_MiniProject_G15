@@ -116,9 +116,10 @@ public class SortingScreen extends GeneralScreen {
 	}
 	
 	//change the text in ColorPane with a history of algorithm's changing states
-	public void writeLogsOnTextPane(ArrayList<HistoryLog> historyLogs) {
+	public void writeLogsOnTextPane(ArrayList<HistoryLog> historyLogs, String nameChosenAlgorithm) {
 		sortingColorPane.setText("");
 		sortingColorPane.setEditable(true);
+		sortingColorPane.append(Color.black, "Starting " + nameChosenAlgorithm.toLowerCase() + ":\n");
 		
 		for (HistoryLog log: historyLogs) {
 			sortingColorPane.append(Color.black, "[");
@@ -220,19 +221,19 @@ public class SortingScreen extends GeneralScreen {
 						chosenAlgorithm = new BubbleSort(dataController.getData(), dataController.getNUMBER_OF_INSTANCE());
 						chosenAlgorithm.sort();
 						ArrayList<HistoryLog> historyLogs = chosenAlgorithm.getHistoryLogs();
-						writeLogsOnTextPane(historyLogs);
+						writeLogsOnTextPane(historyLogs, "Bubble Sort");
 					}
 					else if(btnCommand == "Shell Sort") {
 						chosenAlgorithm = new ShellSort(dataController.getData(), dataController.getNUMBER_OF_INSTANCE());
 						chosenAlgorithm.sort();
 						ArrayList<HistoryLog> historyLogs = chosenAlgorithm.getHistoryLogs();
-						writeLogsOnTextPane(historyLogs);
+						writeLogsOnTextPane(historyLogs, "Shell Sort");
 					}
 					else if(btnCommand == "Heap Sort") {
 						chosenAlgorithm = new HeapSort(dataController.getData(), dataController.getNUMBER_OF_INSTANCE());
 						chosenAlgorithm.sort();
 						ArrayList<HistoryLog> historyLogs = chosenAlgorithm.getHistoryLogs();
-						writeLogsOnTextPane(historyLogs);
+						writeLogsOnTextPane(historyLogs, "Heap Sort");
 					}
 			}
 		}
