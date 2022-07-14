@@ -23,7 +23,6 @@ public class ShellSort extends Algorithm {
 							new int[] {j, j-gap},
 							++numberOfIteration,
 							0));
-						System.out.println(gap);
 					if (arr[j - gap] > temp) {
 						arr[j] = arr[j - gap];
 						arr[j - gap] = temp;  // redundant in algorithm but needed for demonstration
