@@ -49,15 +49,19 @@ public class SortingScreen extends GeneralScreen {
 	}
 
 	public void createCenter() {
+		int coordinateX = 745;
+		int coordinateXSub = 770;
+		int buttonWidth = 175;
+		
 		instanceInputTextField = new JTextField();
 		instanceInputTextField.setText("10");
-		instanceInputTextField.setBounds(900, 123, 27, 20);
+		instanceInputTextField.setBounds(911, 123, 35, 20);
 		contentPane.add(instanceInputTextField);
 		instanceInputTextField.setColumns(10);
 		instanceInputTextField.setHorizontalAlignment(JTextField.CENTER);
 		
-		JLabel instanceInputTextFieldLabel = new JLabel("Number of instances");
-		instanceInputTextFieldLabel.setBounds(775, 126, 121, 14);
+		JLabel instanceInputTextFieldLabel = new JLabel("Number of elements:");
+		instanceInputTextFieldLabel.setBounds(coordinateXSub, 126, 121, 14);
 		contentPane.add(instanceInputTextFieldLabel);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -67,41 +71,47 @@ public class SortingScreen extends GeneralScreen {
 		
 		//ColorPane helps us to change the colors of the text easily
 		sortingColorPane = new ColorPane();
-		sortingColorPane.setFont(new Font("Sylfaen", Font.PLAIN, 23));
+		sortingColorPane.setFont(new Font("MONOSPACED", Font.PLAIN, 23));
 		sortingColorPane.setBackground(Color.WHITE);
 		sortingColorPane.setText("Creating a new array to start sorting!");
 		sortingColorPane.setEditable(false);
 		scrollPane.setViewportView(sortingColorPane);
 		
-		JButton autoCreateArrayBtn = new JButton("Auto create array");
+		JLabel createAnArrayLabel = new JLabel("Create an array:");
+		createAnArrayLabel.setVerticalAlignment(SwingConstants.TOP);
+		createAnArrayLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		createAnArrayLabel.setBounds(coordinateX, 100, 153, 18);
+		contentPane.add(createAnArrayLabel);
+		
+		JButton autoCreateArrayBtn = new JButton("Randomize a new array");
 		autoCreateArrayBtn.addActionListener(new createArrayListener());
-		autoCreateArrayBtn.setBounds(777, 146, 137, 23);
+		autoCreateArrayBtn.setBounds(coordinateXSub, 146, buttonWidth, 23);
 		contentPane.add(autoCreateArrayBtn);
 		
-		JButton selfCreateArrayBtn = new JButton("Self create array");
+		JButton selfCreateArrayBtn = new JButton("Input an array");
 		selfCreateArrayBtn.addActionListener(new createArrayListener());
-		selfCreateArrayBtn.setBounds(777, 180, 137, 23);
+		selfCreateArrayBtn.setBounds(coordinateXSub, 180, buttonWidth, 23);
 		contentPane.add(selfCreateArrayBtn);
 		
-		JLabel algorithmToChooseLabel = new JLabel("Algorithm\r\n to choose: ");
-		algorithmToChooseLabel.setVerticalAlignment(SwingConstants.TOP);
-		algorithmToChooseLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		algorithmToChooseLabel.setBounds(775, 222, 153, 18);
-		contentPane.add(algorithmToChooseLabel);
+		JLabel chooseAnAlgorithmLabel = new JLabel("Choose an algorithm:");
+		chooseAnAlgorithmLabel.setVerticalAlignment(SwingConstants.TOP);
+		chooseAnAlgorithmLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		chooseAnAlgorithmLabel.setBounds(coordinateX, 222, 153, 18);
+		contentPane.add(chooseAnAlgorithmLabel);
 		
 		JButton bubbleSortBtn = new JButton("Bubble Sort");
 		bubbleSortBtn.addActionListener(new choiceOfAlgorithmListener());
-		bubbleSortBtn.setBounds(777, 251, 137, 23);
+		bubbleSortBtn.setBounds(coordinateXSub, 251, buttonWidth, 23);
 		contentPane.add(bubbleSortBtn);
 		
 		JButton shellSortBtn = new JButton("Shell Sort");
 		shellSortBtn.addActionListener(new choiceOfAlgorithmListener());
-		shellSortBtn.setBounds(777, 285, 137, 23);
+		shellSortBtn.setBounds(coordinateXSub, 285, buttonWidth, 23);
 		contentPane.add(shellSortBtn);
 		
 		JButton heapSortBtn = new JButton("Heap Sort");
 		heapSortBtn.addActionListener(new choiceOfAlgorithmListener());
-		heapSortBtn.setBounds(777, 319, 137, 23);
+		heapSortBtn.setBounds(coordinateXSub, 319, buttonWidth, 23);
 		contentPane.add(heapSortBtn);
 	}
 	
@@ -141,10 +151,10 @@ public class SortingScreen extends GeneralScreen {
 			sortingColorPane.append(Color.black, "\n");
 		}
 		
-		sortingColorPane.append(Color.black, "\n\nFinish Sorting: [");
+		sortingColorPane.append(Color.black, "\n\nFinished Sorting: [");
 		for (int i = 0; i < chosenAlgorithm.getArr().length; i++) {
 			if (i != 0) {
-				sortingColorPane.append(Color.green, "  ");
+				sortingColorPane.append(Color.green, " ");
 			}
 			sortingColorPane.append(Color.green, Integer.toString(chosenAlgorithm.getArr()[i]));
 		}
@@ -159,7 +169,7 @@ public class SortingScreen extends GeneralScreen {
 			String btnCommand = e.getActionCommand();
 			//lack of handling exception
 			
-			if (btnCommand == "Auto create array") {
+			if (btnCommand == "Randomize a new array") {
 				try {
 					int chosenNumberOfInstance = Integer.parseInt(instanceInputTextField.getText());
 					dataController.setNUMBER_OF_INSTANCE(chosenNumberOfInstance);
@@ -173,7 +183,7 @@ public class SortingScreen extends GeneralScreen {
 					JOptionPane.showMessageDialog(null, "You need to specify the number of instance before auto create an array");
 				}
 			}
-			else if (btnCommand == "Self create array"){
+			else if (btnCommand == "Input an array"){
 				String inputData = JOptionPane.showInputDialog("Enter the array, each item seperated by a space");
 				try {
 					inputData = inputData.strip();
