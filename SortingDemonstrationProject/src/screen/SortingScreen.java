@@ -93,11 +93,11 @@ public class SortingScreen extends GeneralScreen {
 		selfCreateArrayBtn.setBounds(coordinateXSub, 180, buttonWidth, 23);
 		contentPane.add(selfCreateArrayBtn);
 		
-		JLabel chooseAnAlgorithmLabel = new JLabel("Choose an algorithm:");
-		chooseAnAlgorithmLabel.setVerticalAlignment(SwingConstants.TOP);
-		chooseAnAlgorithmLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		chooseAnAlgorithmLabel.setBounds(coordinateX, 222, 153, 18);
-		contentPane.add(chooseAnAlgorithmLabel);
+		JLabel startAnAlgorithmLabel = new JLabel("Start an algorithm:");
+		startAnAlgorithmLabel.setVerticalAlignment(SwingConstants.TOP);
+		startAnAlgorithmLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		startAnAlgorithmLabel.setBounds(coordinateX, 222, 153, 18);
+		contentPane.add(startAnAlgorithmLabel);
 		
 		JButton bubbleSortBtn = new JButton("Bubble Sort");
 		bubbleSortBtn.addActionListener(new choiceOfAlgorithmListener());
