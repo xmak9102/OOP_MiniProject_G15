@@ -52,7 +52,7 @@ public abstract class GeneralScreen extends JFrame{
 		
 		JLabel lblNewLabel = new JLabel("Sorting Demonstration");
 		lblNewLabel.setForeground(new Color(244, 164, 96));
-		lblNewLabel.setFont(new Font("Quicksand", Font.PLAIN, 33));
+		lblNewLabel.setFont(new Font("Quicksand", Font.PLAIN, 32));
 		lblNewLabel.setBounds(13, 4, 372, 35);
 		contentPane.add(lblNewLabel);
 	}
