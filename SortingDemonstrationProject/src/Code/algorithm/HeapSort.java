@@ -80,12 +80,10 @@ public class HeapSort extends Algorithm {
    			}ito += 1;	
    		}
 	
-	public String sort() {
+	public void sort() {
 		
 		for (int i = 0; i < my_arr.length-1 ; i += 1) {
 			minHeapify(my_arr, i);			
 			}
-		
-		return null;
 		}
 }

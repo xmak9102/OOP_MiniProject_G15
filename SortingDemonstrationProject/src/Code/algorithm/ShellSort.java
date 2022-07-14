@@ -4,7 +4,7 @@ import historylog.HistoryLog;
 
 public class ShellSort extends Algorithm {
 	@Override
-	public String sort() {
+	public void sort() {
 		numberOfIteration = 0;
 		
 		int[] gaps = {701, 301, 132, 57, 23, 10, 4, 1};  // Ciura gap sequence
@@ -33,8 +33,6 @@ public class ShellSort extends Algorithm {
 				// arr[j] = temp;  // this can be removed because of the redundancy above, lol
 			}
 		}
-		
-		return "";
 	}
 	
 	public ShellSort(int[] data, int passInNumberOfInstance) {

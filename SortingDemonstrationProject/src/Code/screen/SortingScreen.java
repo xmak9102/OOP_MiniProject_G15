@@ -126,23 +126,16 @@ public class SortingScreen extends GeneralScreen {
 			sortingColorPane.append(Color.black, Integer.toString(log.getNumberOfIteration()));
 			sortingColorPane.append(Color.black, "]\t");
 			
-			for (int item : log.getCurrentArr()) {
-				//find the index
-				int indexOfInt = 0;
-				for (int i = 0; i < log.getCurrentArr().length; i++) {
-					if (item == log.getCurrentArr()[i]) {
-						indexOfInt = i;
-					}
-				}
+			for (int i = 0; i < log.getCurrentArr().length; i++) {
 				
-				if (indexOfInt <= log.getCorrectFrom()-1) {
-					sortingColorPane.append(Color.green, Integer.toString(item) + " ");
+				if (i <= log.getCorrectFrom()-1) {
+					sortingColorPane.append(Color.green, Integer.toString(log.getCurrentArr()[i]) + " ");
 				}
-				else if (item == log.getComparing()[0] || item == log.getComparing()[1]) {
-					sortingColorPane.append(Color.red, Integer.toString(item) + " ");
+				else if (i == log.getComparingIndex()[0] || i == log.getComparingIndex()[1]) {
+					sortingColorPane.append(Color.red, Integer.toString(log.getCurrentArr()[i]) + " ");
 				}
 				else {
-					sortingColorPane.append(Color.black, Integer.toString(item) + " ");
+					sortingColorPane.append(Color.black, Integer.toString(log.getCurrentArr()[i]) + " ");
 				}
 			}
 			sortingColorPane.append(Color.black, "\n");
@@ -165,15 +158,22 @@ public class SortingScreen extends GeneralScreen {
 		public void actionPerformed(ActionEvent e) {
 			String btnCommand = e.getActionCommand();
 			//lack of handling exception
-			int chosenNumberOfInstance = Integer.parseInt(instanceInputTextField.getText());
+			
 			if (btnCommand == "Auto create array") {
-				dataController.setNUMBER_OF_INSTANCE(chosenNumberOfInstance);
-				dataController.generateData();
-				dataController.shuffleData();
-				String str_arr = dataController.toString();
-				sortingColorPane.setText("Newly created array: " + str_arr);
+				try {
+					int chosenNumberOfInstance = Integer.parseInt(instanceInputTextField.getText());
+					dataController.setNUMBER_OF_INSTANCE(chosenNumberOfInstance);
+					dataController.generateData();
+					dataController.shuffleData();
+					String str_arr = dataController.toString();
+					sortingColorPane.setText("Newly created array: " + str_arr);
+				}
+				catch (NumberFormatException error) {
+					System.out.println(error);
+					JOptionPane.showMessageDialog(null, "You need to specify the number of instance before auto create an array");
+				}
 			}
-			else {
+			else if (btnCommand == "Self create array"){
 				String inputData = JOptionPane.showInputDialog("Enter the array, each item seperated by a space");
 				try {
 					inputData = inputData.strip();
@@ -181,7 +181,6 @@ public class SortingScreen extends GeneralScreen {
 			        int[] inputIntArray = new int[inputStrArray.length];
 			        for (int i = 0; i < inputStrArray.length; i++) {
 			        	try {
-			        		System.out.print("oke");
 			        		inputIntArray[i] = Integer.parseInt(inputStrArray[i]);
 			        	}
 			        	catch (NumberFormatException error){
@@ -195,7 +194,6 @@ public class SortingScreen extends GeneralScreen {
 				        dataController.setData(inputIntArray);
 				        String str_arr = dataController.toString();
 				        sortingColorPane.setText("Newly created array: " + str_arr + "\nArray length: " + inputIntArray.length);
-				        
 			        }
 			        else {
 			        	dataController.setData(null);
