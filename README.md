@@ -1,7 +1,7 @@
 # Demonstration of sorting algorithms on an array
 Demonstrated algorithms: Bubble sort, Heapsort, Shellsort
 
-![image](https://user-images.githubusercontent.com/82358580/179212513-a44ef411-d69c-4ef0-ac11-3297be7e8c8d.png)
+![image](https://user-images.githubusercontent.com/82358580/179212980-8254fb78-3347-43c3-a500-757b28d0c8ee.png)
 
 
 ## Information
