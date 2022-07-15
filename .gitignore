@@ -3,3 +3,4 @@
 *.asta.lock
 
 .metadata/
+bin/
