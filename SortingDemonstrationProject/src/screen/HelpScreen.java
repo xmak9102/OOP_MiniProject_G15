@@ -20,7 +20,15 @@ public class HelpScreen extends GeneralScreen{
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(20, 46, 950, 476);
 		
-		helpCenter.setText("Write about the help menu\n1\n2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJust testing the scroll, ignore it\n\n\n\n\n\nOk");
+		String text =
+"""
+PROJECT: Demonstration of sorting algorithms on an array
+Algorithms: Bubble sort, Heapsort, Shellsort
+"""
+;
+		
+		// helpCenter.setText("Write about the help menu\n1\n2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJust testing the scroll, ignore it\n\n\n\n\n\nOk");
+		helpCenter.setText(text);
 		helpCenter.setFont(new Font("Sylfaen", Font.PLAIN, 23));
 		helpCenter.setEditable(false);
 		scrollPane.setViewportView(helpCenter);
