@@ -104,15 +104,16 @@ public class SortingScreen extends GeneralScreen {
 		bubbleSortBtn.setBounds(coordinateXSub, 251, buttonWidth, 23);
 		contentPane.add(bubbleSortBtn);
 		
-		JButton shellSortBtn = new JButton("Shell Sort");
+		JButton heapSortBtn = new JButton("Heapsort");
+		heapSortBtn.addActionListener(new choiceOfAlgorithmListener());
+		heapSortBtn.setBounds(coordinateXSub, 285, buttonWidth, 23);
+		contentPane.add(heapSortBtn);
+		
+		JButton shellSortBtn = new JButton("Shellsort");
 		shellSortBtn.addActionListener(new choiceOfAlgorithmListener());
-		shellSortBtn.setBounds(coordinateXSub, 285, buttonWidth, 23);
+		shellSortBtn.setBounds(coordinateXSub, 319, buttonWidth, 23);
 		contentPane.add(shellSortBtn);
 		
-		JButton heapSortBtn = new JButton("Heap Sort");
-		heapSortBtn.addActionListener(new choiceOfAlgorithmListener());
-		heapSortBtn.setBounds(coordinateXSub, 319, buttonWidth, 23);
-		contentPane.add(heapSortBtn);
 	}
 	
 	public SortingScreen() {
@@ -129,7 +130,7 @@ public class SortingScreen extends GeneralScreen {
 	public void writeLogsOnTextPane(ArrayList<HistoryLog> historyLogs, String nameChosenAlgorithm) {
 		sortingColorPane.setText("");
 		sortingColorPane.setEditable(true);
-		sortingColorPane.append(Color.black, "Starting " + nameChosenAlgorithm.toLowerCase() + ":\n");
+		sortingColorPane.append(Color.black, "Starting " + nameChosenAlgorithm + ":\n");
 		
 		for (HistoryLog log: historyLogs) {
 			sortingColorPane.append(Color.black, "[");
@@ -231,17 +232,17 @@ public class SortingScreen extends GeneralScreen {
 						ArrayList<HistoryLog> historyLogs = chosenAlgorithm.getHistoryLogs();
 						writeLogsOnTextPane(historyLogs, "Bubble Sort");
 					}
-					else if(btnCommand == "Shell Sort") {
+					else if(btnCommand == "Shellsort") {
 						chosenAlgorithm = new ShellSort(dataController.getData(), dataController.getNUMBER_OF_INSTANCE());
 						chosenAlgorithm.sort();
 						ArrayList<HistoryLog> historyLogs = chosenAlgorithm.getHistoryLogs();
-						writeLogsOnTextPane(historyLogs, "Shell Sort");
+						writeLogsOnTextPane(historyLogs, "Shellsort");
 					}
-					else if(btnCommand == "Heap Sort") {
+					else if(btnCommand == "Heapsort") {
 						chosenAlgorithm = new HeapSort(dataController.getData(), dataController.getNUMBER_OF_INSTANCE());
 						chosenAlgorithm.sort();
 						ArrayList<HistoryLog> historyLogs = chosenAlgorithm.getHistoryLogs();
-						writeLogsOnTextPane(historyLogs, "Heap Sort");
+						writeLogsOnTextPane(historyLogs, "Heapsort");
 					}
 			}
 		}
