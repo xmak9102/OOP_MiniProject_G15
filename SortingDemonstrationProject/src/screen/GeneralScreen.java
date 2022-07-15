@@ -82,7 +82,8 @@ public abstract class GeneralScreen extends JFrame{
 				dispose();
 			}
 			else if (btnCommand == "Quit") {
-				dispose();
+				int answer = JOptionPane.showConfirmDialog(null, "Confirm to quit?");
+				if(answer == 0) {System.exit(0);}
 			}
 		}
 	}
