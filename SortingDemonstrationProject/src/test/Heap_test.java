@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import algorithm.Max_heap;
+import test.Max_heap;
 
 
 	public class Heap_test {
