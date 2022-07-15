@@ -1,40 +1,22 @@
-# OOP_MiniProject_G15
+# Demonstration of sorting algorithms on an array
+Demonstrated algorithms: Bubble sort, Heapsort, Shellsort
 
-## TODO
-> change the use case diagram to not include any of the include or extend relation
-
-t nghi algorithm nao cung nhu nhau
+![image](https://user-images.githubusercontent.com/82358580/179212513-a44ef411-d69c-4ef0-ac11-3297be7e8c8d.png)
 
 
-o Quang Minh lam buble sort 
-https://www.youtube.com/watch?v=nmhjrI-aW5o
+## Information
+- Class:	Object-oriented Programming - 131678
+- Lecturer:	PhD. Nguyen Thi Thu Trang
+- School:
+  - School of Information and Communication Technology
+  - Hanoi University of Science and Technology
+- Authors:	Data Science and Artificial Intelligence - K65
+  - Hoang Tran Nhat Minh	20204883
+  - Nguyen Quang Minh	20204884
+  - Nguyen Tran Xuan Manh	20200385
+  - Duong Vu Tuan Minh	20209705
+- GitHub:	https://github.com/xmak9102/OOP.DSAI.20212.15
+- License:	This project is licensed under the GNU General Public License v3.0
 
-o Tuan Minh lam heap sort
-https://www.youtube.com/watch?v=MtQL_ll5KhQ
-
-o Nhat Minh lam shell sort nhe
-https://www.youtube.com/watch?v=SHcPqUe2GZM
-
-design cai GUI tuy y, khac nhau cung duoc, mien la 
-'show clearly each step of the sorting'
-
-
-t tao cac file java cua algorithm trong git
-ae code trong cac file kia hay khac cung duoc 
-mien~ ten file giong the
-
-
-cai array minh dung la (main_array)
-cac o import thi (inner.main_array) la co
-(inner) la cai class cua main menu
-
-
-mn co gang lam trong khoang 1 tuan (submit truoc 8.6)  de con bo sung
-chu t con chua doc guidelines :)
-
-
-theo t thay thi minh con may cai diagram nua,
-report thi phai lam cuoi r,
-lam xong class lai chia diagram tiep cung duoc
-
-
+## Requirements
+The project is developed on [Java SE Development Kit 17.0.3](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html).
