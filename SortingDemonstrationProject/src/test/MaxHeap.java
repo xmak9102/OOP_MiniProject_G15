@@ -1,8 +1,5 @@
 package test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class MaxHeap  {
 	
 	public Integer[] Heap;
@@ -37,7 +34,8 @@ public class MaxHeap  {
 	    }
 	 
 	    
-	    private void maxHeapify(int pos){
+	    @SuppressWarnings("unused")
+		private void maxHeapify(int pos){
 	        if (isLeaf(pos))
 	            return;
 	 
