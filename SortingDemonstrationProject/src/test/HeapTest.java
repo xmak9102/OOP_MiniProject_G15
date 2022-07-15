@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import test.Max_heap;
+import test.MaxHeap;
 
 
-	public class Heap_test {
+	public class HeapTest {
 		
 	static int ito = 0; //no_of_elements_in_true_order
 	static ArrayList<Integer[]> history_log = new ArrayList<Integer[]>(); 
@@ -21,7 +21,7 @@ import test.Max_heap;
        
        
        for (int j = 0; j < arr.length; j += 1) {
-       Max_heap maxHeap = new Max_heap(history_log.get(history_log.size()-1).length);    
+       MaxHeap maxHeap = new MaxHeap(history_log.get(history_log.size()-1).length);    
        maxHeap.build_max(history_log.get(history_log.size()-1)); 
        maxHeap.print();
        System.out.println("");

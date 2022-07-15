@@ -3,7 +3,7 @@ package test;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Max_heap  {
+public class MaxHeap  {
 	
 	public Integer[] Heap;
     private int size;
@@ -11,7 +11,7 @@ public class Max_heap  {
     
  
 	
-	public Max_heap(int passInNumberOfInstance) {		
+	public MaxHeap(int passInNumberOfInstance) {		
 		this.maxsize = passInNumberOfInstance;
         this.size = 0;
         Heap = new Integer[this.maxsize];
