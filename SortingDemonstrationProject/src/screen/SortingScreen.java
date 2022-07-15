@@ -71,7 +71,7 @@ public class SortingScreen extends GeneralScreen {
 		
 		//ColorPane helps us to change the colors of the text easily
 		sortingColorPane = new ColorPane();
-		sortingColorPane.setFont(new Font("MONOSPACED", Font.PLAIN, 23));
+		sortingColorPane.setFont(new Font("Sylfaen", Font.PLAIN, 23));  // "MONOSPACED"
 		sortingColorPane.setBackground(Color.WHITE);
 		sortingColorPane.setText("Creating a new array to start sorting!");
 		sortingColorPane.setEditable(false);
