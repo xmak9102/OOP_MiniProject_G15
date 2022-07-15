@@ -21,13 +21,20 @@ public class HelpScreen extends GeneralScreen{
 		scrollPane.setBounds(20, 46, 950, 476);
 		
 		String text =
-"""
-PROJECT: Demonstration of sorting algorithms on an array
-Algorithms: Bubble sort, Heapsort, Shellsort
+"""	
+PROJECT:\tDemonstration of sorting algorithms on an array
+Algorithms:\tBubble sort, Heapsort, Shellsort
+From:\tSchool of Information and Communication Technology
+\tHanoi University of Science and Technology
+\tData Science and Artificial Intelligence (IT-E10) - K65
+Authors:\tHoang Tran Nhat Minh - 20204883
+\tNguyen Quang Minh - 20204884
+\tNguyen Tran Xuan Manh - 20200385
+\tDuong Vu Tuan Minh - 20209705
+
 """
 ;
 		
-		// helpCenter.setText("Write about the help menu\n1\n2\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJust testing the scroll, ignore it\n\n\n\n\n\nOk");
 		helpCenter.setText(text);
 		helpCenter.setFont(new Font("Sylfaen", Font.PLAIN, 23));
 		helpCenter.setEditable(false);
