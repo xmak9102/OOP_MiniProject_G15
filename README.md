@@ -12,9 +12,19 @@ Demonstrated algorithms: Bubble sort, Heapsort, Shellsort
   - Hanoi University of Science and Technology
 - Authors:	Data Science and Artificial Intelligence - K65
   - Hoang Tran Nhat Minh	20204883
+    - Use case diagram 
+    - Shellsort class 
+    - Package arrangement
   - Nguyen Quang Minh	20204884
+    - Report writing 
+    - Sort algorithms research
   - Nguyen Tran Xuan Manh	20200385
+    - Heapsort class
+    - Slide presentation
   - Duong Vu Tuan Minh	20209705
+    - Class diagrams 
+    - Screen package 
+    - Bubble sort class
 - GitHub:	https://github.com/xmak9102/OOP.DSAI.20212.15
 - License:	This project is licensed under the GNU General Public License v3.0
 
