@@ -21,4 +21,4 @@ Demonstrated algorithms: Bubble sort, Heapsort, Shellsort
 ## Requirements
 The project is developed on [Java SE Development Kit 17.0.3](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html).
 ## Demo video
-https://husteduvn-my.sharepoint.com/:v:/g/personal/manh_ntx200385_sis_hust_edu_vn/EVvTJEAp5bZNumfG0cItZR8BNviyXSpxAc7h5_D6RQ0Okw?e=00b1iq
+https://drive.google.com/file/d/13HD7e1tDiuXIfkSx3roE6Mv-VIdjBKud/view?usp=sharing
